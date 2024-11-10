@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarMain"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:title="Главная"
+        android:titleTextColor="@android:color/white"
+        tools:ignore="MissingConstraints" />
+
+    <!-- Поля для ввода данных -->
+    <EditText
+        android:id="@+id/etBrand"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Марка автомобиля"
+        android:minHeight="48dp"
+        app:layout_constraintTop_toBottomOf="@id/toolbarMain"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp" />
+
+    <EditText
+        android:id="@+id/etModel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Модель автомобиля"
+        android:minHeight="48dp"
+        app:layout_constraintTop_toBottomOf="@id/etBrand"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp" />
+
+    <EditText
+        android:id="@+id/etYear"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Год выпуска"
+        android:inputType="number"
+        android:minHeight="48dp"
+        app:layout_constraintTop_toBottomOf="@id/etModel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp" />
+
+    <RadioGroup
+        android:id="@+id/rgVehicleType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/etYear"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp">
+
+        <RadioButton
+            android:id="@+id/rbSedan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Седан" />
+
+        <RadioButton
+            android:id="@+id/rbWagon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Универсал" />
+
+        <RadioButton
+            android:id="@+id/rbSuv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Внедорожник" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btnSubmit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Отправить"
+        app:layout_constraintTop_toBottomOf="@id/rgVehicleType"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
